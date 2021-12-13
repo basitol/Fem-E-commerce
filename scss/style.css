@@ -250,4 +250,19 @@ header .cart-avatar-grp .avatar img:hover {
   color: #ff7d1a;
   letter-spacing: 0.18rem;
 }
+
+.product .title {
+  margin-top: 1.3rem;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 118%;
+  color: #1d2025;
+}
+
+.product .description {
+  margin-top: 1.6rem;
+  font-size: 1.5rem;
+  line-height: 170%;
+  color: #68707d;
+}
 /*# sourceMappingURL=style.css.map */
