@@ -13,6 +13,9 @@ const productCounter = document.querySelector(".counter");
 const gallery = document.querySelectorAll(".pic");
 const heroImg = document.querySelector(".product-hero");
 
+const btnNext = document.querySelector(".next");
+const btnPrev = document.querySelector(".previous");
+
 // Numerical value
 let productCounterValue = 1;
 
@@ -25,6 +28,9 @@ btnMinus.addEventListener("click", productMinus);
 gallery.forEach((img) => {
   img.addEventListener("click", onThumbClick);
 });
+
+btnNext.addEventListener("click", handleBtnClickNext);
+btnPrev.addEventListener("click", handleBtnClickPrev);
 
 function onHamburgerClick() {
   menu.classList.remove("hidden");
@@ -66,4 +72,48 @@ function onThumbClick(event) {
 
   //update hero img
   heroImg.src = event.target.src.replace("-thumnail", "");
+}
+
+function handleBtnClickNext() {
+  let imageIndex = getCurrentImageIndex();
+  imageIndex++;
+
+  if (imageIndex > 4) {
+    imageIndex = 1;
+  }
+  setHeroImage(imageIndex);
+}
+
+function handleBtnClickPrev() {
+  let imageIndex = getCurrentImageIndex();
+  imageIndex--;
+
+  if (imageIndex < 1) {
+    imageIndex = 4;
+  }
+  setHeroImage(imageIndex);
+}
+
+function getCurrentImageIndex() {
+  const imageIndex = parseInt(
+    heroImg.src
+      .split("\\")
+      .pop()
+      .split("/")
+      .pop()
+      .replace(".jpg", "")
+      .replace("image-product-", "")
+  );
+  return imageIndex;
+  // console.log(imageIndex);
+}
+
+function setHeroImage(imageIndex) {
+  heroImg.src = `./img/image-product-${imageIndex}.jpg`;
+
+  gallery.forEach((img) => {
+    img.classList.remove("active");
+  });
+
+  gallery[imageIndex - 1].classList.add("active");
 }
