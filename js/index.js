@@ -10,6 +10,9 @@ const btnPlus = document.querySelector("#btnPlus");
 const btnMinus = document.querySelector("#btnMinus");
 const productCounter = document.querySelector(".counter");
 
+const gallery = document.querySelectorAll(".pic");
+const heroImg = document.querySelector(".product-hero");
+
 // Numerical value
 let productCounterValue = 1;
 
@@ -18,6 +21,10 @@ btnMenuClose.addEventListener("click", onMenuClose);
 
 btnPlus.addEventListener("click", productPlus);
 btnMinus.addEventListener("click", productMinus);
+
+gallery.forEach((img) => {
+  img.addEventListener("click", onThumbClick);
+});
 
 function onHamburgerClick() {
   menu.classList.remove("hidden");
@@ -48,4 +55,15 @@ function setProductCounter(value) {
     productCounter.innerHTML = productCounterValue;
   }
   // console.log(value);
+}
+
+function onThumbClick(event) {
+  gallery.forEach((img) => {
+    img.classList.remove("active");
+  });
+
+  event.target.parentElement.classList.add("active");
+
+  //update hero img
+  heroImg.src = event.target.src.replace("-thumnail", "");
 }
