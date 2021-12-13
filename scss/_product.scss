@@ -1,5 +1,5 @@
 .product {
-  padding: 2rem 2.4rem;
+  padding: 2rem 2.4rem 4.4rem 2.4rem;
 
   .company-name {
     text-transform: uppercase;
@@ -59,5 +59,56 @@
       color: $grayish-blue;
       text-decoration: line-through;
     }
+  }
+
+  .counter-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $light-grayish-blue;
+    padding: 1.2rem 2.4rem;
+    margin-top: 2rem;
+    border-radius: 1rem;
+
+    .counter {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    #btnPlus,
+    #btnMinus {
+      cursor: pointer;
+      padding: 1rem;
+      border-radius: 0.5rem;
+
+      &:hover {
+        opacity: 0.5;
+        background-color: $pale-orange;
+      }
+    }
+  }
+
+  .btn {
+    margin-top: 1.8rem;
+    padding: 1.9rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+
+    background-color: $orange;
+    border-radius: 1rem;
+
+    color: $white;
+    font-size: 1.55rem;
+    font-weight: 700;
+
+    img {
+      height: 1.5rem;
+      filter: brightness(300%);
+    }
+
+    box-shadow: 0px 20px 30px 0px $pale-orange;
   }
 }
