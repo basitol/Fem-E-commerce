@@ -1,5 +1,5 @@
 header {
-  //   border: 1px solid green;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -45,7 +45,7 @@ header {
       // transform: translateX(-100%);
       transform-origin: 0 0;
       transition: all 0.3s linear;
-      // z-index: 3;
+      z-index: 3;
 
       .slide-menu {
         background-color: $white;
@@ -143,5 +143,96 @@ header {
         }
       }
     }
+  }
+
+  .cart {
+    position: absolute;
+    right: 1rem;
+    top: calc(calc(100%) + 1rem);
+    width: 35.5rem;
+
+    border-radius: 1rem;
+    background-color: $white;
+    z-index: 1;
+
+    &__header {
+      padding: 2.4rem 2rem;
+      border-bottom: 1px solid $grayish-blue;
+
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    &__product {
+      .item {
+        margin: 2.4em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .product-img {
+          width: 5rem;
+          border-radius: 0.5rem;
+        }
+
+        .details {
+          color: $dark-grayish-blue;
+          font-size: 1.6rem;
+          line-height: 2.6rem;
+
+          .price-grp {
+            display: flex;
+            gap: 0.6rem;
+
+            .total-amount {
+              font-weight: 700;
+              font-size: 1.7rem;
+              color: $black;
+            }
+          }
+        }
+
+        #btnDelete {
+          padding: 0.5rem;
+          border-radius: 0.5rem;
+
+          &:hover {
+            cursor: pointer;
+            background-color: $pale-orange;
+          }
+        }
+      }
+    }
+
+    .msg-empty {
+      padding: 7.8rem;
+
+      color: $dark-grayish-blue;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .checkout {
+      margin: 2.4rem;
+      padding: 1.8rem;
+      border-radius: 1rem;
+
+      background-color: $orange;
+      color: $white;
+      text-align: center;
+      font-size: 1.6rem;
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .hidden {
+      display: none;
+    }
+  }
+
+  .hidden {
+    display: none;
   }
 }

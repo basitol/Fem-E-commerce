@@ -2,7 +2,9 @@ const menu = document.querySelector(".menu");
 const header = document.querySelector(".header");
 const btnHamburger = document.querySelector(".hamburger");
 const btnMenuClose = document.querySelector("#btnMenuClose");
-const slideElems = document.querySelectorAll(".has-slide");
+
+const cart = document.querySelector(".cart");
+const btnCart = document.querySelector(".btn-cart");
 
 btnHamburger.addEventListener("click", onHamburgerClick);
 btnMenuClose.addEventListener("click", onMenuClose);
@@ -15,6 +17,11 @@ function onMenuClose() {
   menu.classList.add("hidden");
 }
 
+btnCart.addEventListener("click", openCart);
+
+function openCart() {
+  cart.classList.toggle("hidden");
+}
 // btnHamburger.addEventListener("click", function () {
 //   console.log("click hamburger");
 
