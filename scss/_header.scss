@@ -184,7 +184,16 @@ header {
 
           .price-grp {
             display: flex;
-            gap: 0.6rem;
+            // gap: 0.6rem;
+
+            .price {
+              margin-right: 0.6rem;
+            }
+
+            .count {
+              margin-left: 0.6rem;
+              margin-right: 0.6rem;
+            }
 
             .total-amount {
               font-weight: 700;

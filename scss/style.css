@@ -242,7 +242,15 @@ header .cart__product .item .details .price-grp {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 0.6rem;
+}
+
+header .cart__product .item .details .price-grp .price {
+  margin-right: 0.6rem;
+}
+
+header .cart__product .item .details .price-grp .count {
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
 }
 
 header .cart__product .item .details .price-grp .total-amount {
