@@ -1,0 +1,253 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 2rem;
+}
+
+header .hamburger-logo-grp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header .hamburger-logo-grp .hamburger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  margin-right: 1.6rem;
+}
+
+header .hamburger-logo-grp .hamburger .line {
+  width: 1.5rem;
+  height: 0.3rem;
+  margin-top: 0.3rem;
+  background-color: #68707d;
+}
+
+header .hamburger-logo-grp nav {
+  background-color: rgba(0, 0, 0, 0.75);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+header .hamburger-logo-grp nav .slide-menu {
+  background-color: white;
+  height: 100%;
+  width: 65vw;
+  padding: 2.3rem;
+}
+
+header .hamburger-logo-grp nav .slide-menu img {
+  -webkit-transition: -webkit-transform 0.5s ease;
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+}
+
+header .hamburger-logo-grp nav .slide-menu img:hover {
+  cursor: pointer;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+header .hamburger-logo-grp nav .slide-menu ul {
+  margin-top: 5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+}
+
+header .hamburger-logo-grp nav .slide-menu ul li {
+  margin-bottom: 2.3rem;
+}
+
+header .hamburger-logo-grp nav .slide-menu ul a,
+header .hamburger-logo-grp nav .slide-menu ul :active,
+header .hamburger-logo-grp nav .slide-menu ul :visited {
+  color: #1d2025;
+  text-decoration: none;
+}
+
+header .hamburger-logo-grp nav .slide-menu ul a:hover,
+header .hamburger-logo-grp nav .slide-menu ul :active:hover,
+header .hamburger-logo-grp nav .slide-menu ul :visited:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.75;
+}
+
+header .hamburger-logo-grp .hidden {
+  display: none;
+}
+
+header .cart-avatar-grp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header .cart-avatar-grp .btn-cart {
+  position: relative;
+  margin-right: 2.2rem;
+  cursor: pointer;
+}
+
+header .cart-avatar-grp .btn-cart .cart-count {
+  position: absolute;
+  top: -25%;
+  right: -25%;
+  background: #ff7d1a;
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 100%;
+  padding: 0.1rem 0.6rem;
+  border-radius: 1rem;
+}
+
+header .cart-avatar-grp .avatar {
+  width: 2.4rem;
+}
+
+header .cart-avatar-grp .avatar img {
+  width: 100%;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+header .cart-avatar-grp .avatar img:hover {
+  border: 2px solid #ff7d1a;
+  border-radius: 50%;
+  -webkit-transition: ease-out 0.2s;
+  transition: ease-out 0.2s;
+}
+
+.lightbox {
+  position: relative;
+}
+
+.lightbox .product-hero {
+  width: 100%;
+}
+
+.lightbox .previous {
+  left: 4%;
+}
+
+.lightbox .previous:hover {
+  left: 3%;
+}
+
+.lightbox .next {
+  right: 4%;
+}
+
+.lightbox .next:hover {
+  right: 3%;
+}
+
+.lightbox .arrow {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background: white;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.product {
+  padding: 2rem 2.4rem;
+}
+
+.product .company-name {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #ff7d1a;
+  letter-spacing: 0.18rem;
+}
+/*# sourceMappingURL=style.css.map */

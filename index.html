@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./scss/style.css">
+
+    <!-- font style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="hamburger-logo-grp">
+                <div class="hamburger">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+                <img src="./img/logo.svg" alt="">
+
+                <nav class="menu hidden">
+                    <div class="slide-menu">
+                        <img id="btnMenuClose" src="./img/icon-close.svg" alt="">
+                        <ul>
+                            <li><a href="#">Collections</a></li>
+                            <li><a href="#">Men</a></li>
+                            <li><a href="#">Women</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="cart-avatar-grp">
+                <div class="btn-cart">
+                    <img src="./img/icon-cart.svg" alt="">
+                    <div class="cart-count">3</div>
+                </div>
+                <div class="avatar">
+                    <img src="./img/image-avatar.png" alt="">
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+
+            <!-- Lightbox -->
+            <section class="lightbox">
+                <img class="product-hero" src="./img/image-product-1.jpg" alt="image product">
+                <div class="previous arrow">
+                    <img src="./img/icon-previous.svg" alt="icon pevious">
+                </div>
+                <div class="next arrow">
+                    <img src="./img/icon-next.svg" alt="icon next">
+                </div>
+            </section>
+
+            <section class="product">
+                <div class="company-name">sneaker company</div>
+                <div class="title">Fall Limited Edition Sneakers</div>
+            </section>
+        </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
