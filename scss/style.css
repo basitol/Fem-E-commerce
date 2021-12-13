@@ -262,7 +262,54 @@ header .cart-avatar-grp .avatar img:hover {
 .product .description {
   margin-top: 1.6rem;
   font-size: 1.5rem;
-  line-height: 170%;
+  line-height: 165%;
   color: #68707d;
+}
+
+.product .price-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.product .price-wrapper .group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.product .price-wrapper .group .price {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.product .price-wrapper .group .discount {
+  margin-left: 1.4rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ff7d1a;
+  background-color: #ffede0;
+}
+
+.product .price-wrapper .old-price {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #b6bcc8;
+  text-decoration: line-through;
 }
 /*# sourceMappingURL=style.css.map */
