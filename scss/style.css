@@ -199,7 +199,7 @@ header .cart {
   position: absolute;
   right: 1rem;
   top: calc(calc(100%) + 1rem);
-  width: 35.5rem;
+  width: 34rem;
   border-radius: 1rem;
   background-color: white;
   -webkit-box-shadow: 0 1rem 1rem 1rem rgba(0, 0, 0, 0.1), 0 1rem 2rem 1rem rgba(0, 0, 0, 0.1);
