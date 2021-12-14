@@ -143,9 +143,11 @@ function addToCart() {
         Autumn Limited Edition...
       </div>
       <div class="price-grp">
-        <div class="price">$${newPrice}</div> x
+        <div class="price">$${newPrice.toFixed(2)}</div> x
         <div class="count">${productInCart}</div>
-        <div class="total-amount">$${newPrice * productInCart}</div>
+        <div class="total-amount">$${(newPrice * productInCart).toFixed(
+          2
+        )}</div>
       </div>
     </div>
     <img id="btnDelete" src="./img/icon-delete.svg" alt="icon delete">
@@ -154,6 +156,10 @@ function addToCart() {
   productInShoppingCart.innerHTML = productHTMLElement;
 
   updateCart();
+
+  const btnDelete = document.querySelector("#btnDelete");
+  btnDelete.addEventListener("click", deleteCartItem);
+
   // console.log(productInCart);
 }
 
@@ -176,18 +182,39 @@ function updateCartIcon() {
 }
 
 function updateMsgEmpty() {
-  if (cartCount == 0) {
-    msgEmpty.classList.remove("hidden");
+  if (productInCart == 0) {
+    if (msgEmpty.classList.contains("hidden")) {
+      msgEmpty.classList.remove("hidden");
+    }
   } else {
-    msgEmpty.classList.add("hidden");
+    if (!msgEmpty.classList.contains("hidden")) {
+      msgEmpty.classList.add("hidden");
+    }
   }
 }
 
 function updateCheckoutButton() {
-  if (cartCount == 0) {
-    checkOut.classList.add("hidden");
+  if (productInCart == 0) {
+    if (!checkOut.classList.contains("hidden")) {
+      checkOut.classList.add("hidden");
+    }
   } else {
     checkOut.classList.remove("hidden");
+  }
+}
+
+function deleteCartItem() {
+  // console.log("deleted");
+  productInCart--;
+  updateCart();
+
+  const el = document.querySelector(".count");
+  const totalAmount = document.querySelector(".total-amount");
+  el.innerHTML = productInCart;
+  totalAmount.innerHTML = `$${(newPrice * productInCart).toFixed(2)}`;
+
+  if (productInCart == 0) {
+    productInShoppingCart.innerHTML = "";
   }
 }
 
