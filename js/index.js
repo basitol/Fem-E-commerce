@@ -16,8 +16,20 @@ const heroImg = document.querySelector(".product-hero");
 const btnNext = document.querySelector(".next");
 const btnPrev = document.querySelector(".previous");
 
+const btnAddToCart = document.querySelector(".btn");
+const cartCount = document.querySelector(".cart-count");
+
+const productInShoppingCart = document.querySelector(".cart__product");
+
+const msgEmpty = document.querySelector(".msg-empty");
+const checkOut = document.querySelector(".checkout");
+
 // Numerical value
 let productCounterValue = 1;
+let productInCart = 0;
+let price = 250.0;
+let discount = 0.5;
+let newPrice = price * discount;
 
 btnHamburger.addEventListener("click", onHamburgerClick);
 btnMenuClose.addEventListener("click", onMenuClose);
@@ -31,6 +43,8 @@ gallery.forEach((img) => {
 
 btnNext.addEventListener("click", handleBtnClickNext);
 btnPrev.addEventListener("click", handleBtnClickPrev);
+
+btnAddToCart.addEventListener("click", addToCart);
 
 function onHamburgerClick() {
   menu.classList.remove("hidden");
@@ -117,3 +131,65 @@ function setHeroImage(imageIndex) {
 
   gallery[imageIndex - 1].classList.add("active");
 }
+
+function addToCart() {
+  productInCart += productCounterValue;
+
+  const productHTMLElement = `
+  <div class="item">
+    <img class="product-img" src="./img/image-product-1-thumbnail.jpg" alt="product 1 thumb">
+    <div class="details">
+      <div class="product-name">
+        Autumn Limited Edition...
+      </div>
+      <div class="price-grp">
+        <div class="price">$${newPrice}</div> x
+        <div class="count">${productInCart}</div>
+        <div class="total-amount">$${newPrice * productInCart}</div>
+      </div>
+    </div>
+    <img id="btnDelete" src="./img/icon-delete.svg" alt="icon delete">
+  </div>`;
+
+  productInShoppingCart.innerHTML = productHTMLElement;
+
+  updateCart();
+  // console.log(productInCart);
+}
+
+function updateCart() {
+  updateCartIcon();
+  updateMsgEmpty();
+  updateCheckoutButton();
+}
+
+function updateCartIcon() {
+  cartCount.textContent = productInCart;
+
+  if (productInCart == 0) {
+    if (!cartCount.classList.contains("hidden")) {
+      cartCount.classList.add("hidden");
+    }
+  } else {
+    cartCount.classList.remove("hidden");
+  }
+}
+
+function updateMsgEmpty() {
+  if (cartCount == 0) {
+    msgEmpty.classList.remove("hidden");
+  } else {
+    msgEmpty.classList.add("hidden");
+  }
+}
+
+function updateCheckoutButton() {
+  if (cartCount == 0) {
+    checkOut.classList.add("hidden");
+  } else {
+    checkOut.classList.remove("hidden");
+  }
+}
+
+// cartCount.innerHTML = 1;
+// cartCount.textContent = 2;

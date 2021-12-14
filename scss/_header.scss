@@ -247,3 +247,12 @@ header {
     display: none;
   }
 }
+
+@media screen and (max-width: 400px) {
+  header {
+    .cart {
+      width: 95%;
+      // left: 1rem;
+    }
+  }
+}

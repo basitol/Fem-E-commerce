@@ -297,6 +297,12 @@ header .hidden {
   display: none;
 }
 
+@media screen and (max-width: 400px) {
+  header .cart {
+    width: 95%;
+  }
+}
+
 .lightbox {
   position: relative;
 }
